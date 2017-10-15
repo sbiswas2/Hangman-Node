@@ -1,0 +1,22 @@
+{
+  "name": "hangman-node",
+  "version": "1.0.0",
+  "description": "hangman game in node with constructors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbiswas2/Hangman-Node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbiswas2/Hangman-Node/issues"
+  },
+  "homepage": "https://github.com/sbiswas2/Hangman-Node#readme",
+  "dependencies": {
+    "inquirer": "^3.3.0"
+  }
+}
