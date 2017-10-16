@@ -1,6 +1,6 @@
 var inquirer = require('inquirer');
 var word = require("./word");
-var count = 0;
+var count = 9;
 var userGuess = [];
 
 // find word function?
