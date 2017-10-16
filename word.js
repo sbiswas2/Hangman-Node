@@ -68,8 +68,8 @@ function readWords() {
   	}
   	phrase = data.toString().split('\n');
   	blankWord = phrase[Math.floor(Math.random() * phrase.length)];
+  	module.exports = blankWord;
 	});
 };
 
 readWords();
-

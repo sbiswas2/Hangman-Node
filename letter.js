@@ -26,3 +26,6 @@
 var inquirer = require('inquirer');
 var word = require('./word.js');
 console.log(word);
+
+
+// function for game
