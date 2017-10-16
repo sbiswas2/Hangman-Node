@@ -36,20 +36,40 @@
 
 // console.log(word.renderWord());
 
+//------------------------------
+// sam's code
+
+// var fs = require('fs');
+// wordBank = ['par', 'birdie'];
+
+// var TheWord = function (word) {
+// 	this.word = wordBank[Math.floor(Math.random() * wordBank.length)];
+// 	console.log(this.word);
+// 	this.wordArr = [];
+// 		this.wordArr.push(this.word);
+// 		for (var i = 0; i < this.word.length; i++) {
+// 			this.wordArr[i] = "_";
+// 		}
+// 		console.log(this.wordArr);
+// }
+// TheWord();
+// module.exports = TheWord;
+//-------------------------------
+
 var fs = require('fs');
-wordBank = ['par', 'birdie'];
+var phrase = [];
+var blankWord = "";
+// reads list of words and stores them into an array
+function readWords() {
+	fs.readFile("wordbank.txt", "utf8", function(error, data) {
+  	if (error) {
+  		console.log(error);
+  		return;
+  	}
+  	phrase = data.toString().split('\n');
+  	blankWord = phrase[Math.floor(Math.random() * phrase.length)];
+	});
+};
 
-var TheWord = function (word) {
-	this.word = wordBank[Math.floor(Math.random() * wordBank.length)];
-	console.log(this.word);
-	this.wordArr = [];
-		this.wordArr.push(this.word);
-		for (var i = 0; i < this.word.length; i++) {
-			this.wordArr[i] = "_";
-		}
-		console.log(this.wordArr);
-}
-TheWord();
-module.exports = TheWord;
-
+readWords();
 

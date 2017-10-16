@@ -8,13 +8,21 @@
 
 // module.exports = letterConstructor;
 
-var fs = require('fs');
+//------------------------------------------
+// sam's code
+// var fs = require('fs');
+// var word = require('./word.js');
+
+// var Letters = function (word, letter) {
+// 	this.wordArr = [];
+
+// 	this.letter = function (word) {
+// 		this.wordArr.push(word);
+// 	}
+// }
+//--------------------------------------------
+
+// var request = require('request');
+var inquirer = require('inquirer');
 var word = require('./word.js');
-
-var Letters = function (word, letter) {
-	this.wordArr = [];
-
-	this.letter = function (word) {
-		this.wordArr.push(word);
-	}
-}
+console.log(word);

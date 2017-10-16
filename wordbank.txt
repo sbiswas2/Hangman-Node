@@ -1,3 +1,4 @@
+champion
 chicago
-austin
-houston
+bulls
+hangtime

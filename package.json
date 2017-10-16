@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sbiswas2/Hangman-Node#readme",
   "dependencies": {
-    "inquirer": "^3.3.0"
+    "inquirer": "^3.3.0",
+    "request": "^2.83.0"
   }
 }
