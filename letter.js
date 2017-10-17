@@ -25,7 +25,18 @@
 // var request = require('request');
 var inquirer = require('inquirer');
 var word = require('./word.js');
-console.log(word);
+
+// function for creating spaces, then run game
+var spaces = function() {
+	var JamesWord = new word();
+	JamesWord.James(); // function within a function (see 11.4 example)
+};
+
+spaces();
 
 
-// function for game
+// function for inquirer to grab user's input and compare against word, reset once game is over
+
+
+
+

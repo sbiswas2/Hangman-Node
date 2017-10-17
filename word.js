@@ -57,19 +57,19 @@
 //-------------------------------
 
 var fs = require('fs');
-var phrase = [];
-var blankWord = "";
 // reads list of words and stores them into an array
-function readWords() {
-	fs.readFile("wordbank.txt", "utf8", function(error, data) {
-  	if (error) {
-  		console.log(error);
-  		return;
-  	}
-  	phrase = data.toString().split('\n');
-  	blankWord = phrase[Math.floor(Math.random() * phrase.length)];
-  	module.exports = blankWord;
-	});
+var readWords = function () {
+	this.James = function(){
+			fs.readFile("wordbank.txt", "utf8", function(error, data) {
+		  	if (error) {
+		  		console.log(error);
+		  		return;
+		  	}
+		  	var phrase = data.toString().split('\n');
+		  	var blankWord = phrase[Math.floor(Math.random() * phrase.length)];
+		  	console.log(blankWord);
+			});
+	}
 };
 
-readWords();
+module.exports = readWords;
