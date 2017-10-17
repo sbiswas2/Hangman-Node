@@ -25,18 +25,20 @@
 // var request = require('request');
 var inquirer = require('inquirer');
 var word = require('./word.js');
-
+//console.log(word)
 // function for creating spaces, then run game
 var spaces = function() {
 	var JamesWord = new word();
-	JamesWord.James(); // function within a function (see 11.4 example)
+	var blankWord = JamesWord.James(); // function within a function (see 11.4 example)
+	console.log(blankWord)
 
-	// var answerSpaces = [];
-	// for (var i = 0; i < blankWord.length; i++) {
-	// 		answerSpaces[i] = "_";
-	// 	}
-	// 		console.log(answerSpaces);
-	// 	var letters = blankWord.length;
+	var answerSpaces = [];
+	for (var i = 0; i < blankWord.length; i++) {
+			answerSpaces[i] = "_";
+		}
+		console.log(answerSpaces);
+		var letters = blankWord.length;
+		return letters;
 };
 
 spaces();
