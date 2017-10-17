@@ -30,6 +30,13 @@ var word = require('./word.js');
 var spaces = function() {
 	var JamesWord = new word();
 	JamesWord.James(); // function within a function (see 11.4 example)
+
+	// var answerSpaces = [];
+	// for (var i = 0; i < blankWord.length; i++) {
+	// 		answerSpaces[i] = "_";
+	// 	}
+	// 		console.log(answerSpaces);
+	// 	var letters = blankWord.length;
 };
 
 spaces();
