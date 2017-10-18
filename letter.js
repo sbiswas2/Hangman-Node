@@ -27,11 +27,12 @@ var inquirer = require('inquirer');
 var word = require('./word.js');
 var answerSpaces = [];
 var letters;
-var guesses = 10;
+var guesses;
 var blankWord;
 //console.log(word)
 // function for creating spaces, then run game
 function calculateSpaces() {
+	guesses = 10;
 	var JamesWord = new word();
 	blankWord = JamesWord.James(); // function within a function (see 11.4 example)
 	console.log(blankWord)
@@ -65,15 +66,39 @@ function playGame(answers) {
 		}
 		console.log(answerSpaces);
 	});
-
+	// then run function to check again guesses
+	checker();
 };
 
 // take user guesses, compare against word, keeps track of guesses, when done reset
-
+function checker() {
+	if (letters === 0) {
+		console.log("You Win!");
+		newGame();
+	} else if (guesses === 0) {
+		console.log("You Lose!");
+		newGame();
+	} else {
+		
+	}
+};
 // reset function for variables, then run spaces() again which then leads to game and so on
 
-calculateSpaces();
-
 // inquirer prompt would you like to play?
+function newGame() {
+	inquirer.prompt({
+		name: 'play',
+		type: 'input',
+		message: 'Would you like to play? (Y/N)'
+	}).then(function (answers){
+		var userInput = answers.play.toUpperCase();
+		console.log(userInput);
+		if (userInput === "Y"){
+			calculateSpaces();
+		} else {
+			return;
+		}
+	});
+};
 
-
+newGame();
