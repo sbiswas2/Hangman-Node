@@ -31,7 +31,25 @@ var guesses;
 var blankWord;
 //console.log(word)
 // function for creating spaces, then run game
-function calculateSpaces() {
+toPlay();
+// inquirer prompt would you like to play?
+function toPlay() {
+	inquirer.prompt({
+		name: 'play',
+		type: 'input',
+		message: 'Would you like to play? (Y/N)'
+	}).then(function (answers){
+		var userInput = answers.play.toUpperCase();
+		console.log(userInput);
+		if (userInput === "Y"){
+			newGame();
+		} else {
+			return;
+		}
+	});
+};
+
+function newGame() {
 	guesses = 10;
 	answerSpaces = [];
 	var JamesWord = new word();
@@ -76,31 +94,15 @@ function playGame(answers) {
 function checker() {
 	if (letters === 0) {
 		console.log("You Win!");
-		newGame();
+		toPlay();
 	} else if (guesses === 0) {
 		console.log("You Lose!");
-		newGame();
+		toPlay();
 	} else {
 		playGame();
 	}
 };
 // reset function for variables, then run spaces() again which then leads to game and so on
 
-// inquirer prompt would you like to play?
-function newGame() {
-	inquirer.prompt({
-		name: 'play',
-		type: 'input',
-		message: 'Would you like to play? (Y/N)'
-	}).then(function (answers){
-		var userInput = answers.play.toUpperCase();
-		console.log(userInput);
-		if (userInput === "Y"){
-			calculateSpaces();
-		} else {
-			return;
-		}
-	});
-};
 
-newGame();
+
