@@ -25,28 +25,38 @@
 // var request = require('request');
 var inquirer = require('inquirer');
 var word = require('./word.js');
+var answerSpaces = [];
+var letters;
 //console.log(word)
 // function for creating spaces, then run game
-var spaces = function() {
+function calculateSpaces() {
 	var JamesWord = new word();
 	var blankWord = JamesWord.James(); // function within a function (see 11.4 example)
 	console.log(blankWord)
 
-	var answerSpaces = [];
 	for (var i = 0; i < blankWord.length; i++) {
 			answerSpaces[i] = "_";
 		}
 		console.log(answerSpaces);
-		var letters = blankWord.length;
-		return letters;
+		letters = blankWord.length;
 	// then run function for user guesses
+	playGame();
+};
+
+function playGame(answers) {
+	inquirer.prompt({
+		name: 'guess',
+		message: 'Guess Letter'
+	}).then(function (answers){
+		console.log(answers);
+	});
 };
 
 // take user guesses, compare against word, keeps track of guesses, when done reset
 
 // reset function for variables, then run spaces() again which then leads to game and so on
 
-spaces();
+calculateSpaces();
 
 
 
