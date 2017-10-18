@@ -33,6 +33,7 @@ var blankWord;
 // function for creating spaces, then run game
 function calculateSpaces() {
 	guesses = 10;
+	answerSpaces = [];
 	var JamesWord = new word();
 	blankWord = JamesWord.James(); // function within a function (see 11.4 example)
 	console.log(blankWord)
@@ -54,17 +55,18 @@ function playGame(answers) {
 		type: 'input',
 		message: 'Guess Letter'
 	}).then(function (answers){
+		guesses--;
 		var userGuess = answers.guess;
 		console.log(userGuess);
 		for (var j = 0; j < newWord.length; j++) {
 			if (userGuess === newWord[j]) {
 				answerSpaces[j] = userGuess;
 				letters--; //used to calculate if user will lose
-			} else {
-				guesses--;
 			}
 		}
 		console.log(answerSpaces);
+		console.log(letters);
+		console.log(guesses);
 		checker();
 	});
 	// then run function to check again guesses
