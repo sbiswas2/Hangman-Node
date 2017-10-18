@@ -39,12 +39,14 @@ var spaces = function() {
 		console.log(answerSpaces);
 		var letters = blankWord.length;
 		return letters;
+	// then run function for user guesses
 };
 
+// take user guesses, compare against word, keeps track of guesses, when done reset
+
+// reset function for variables, then run spaces() again which then leads to game and so on
+
 spaces();
-
-
-// function for inquirer to grab user's input and compare against word, reset once game is over
 
 
 
