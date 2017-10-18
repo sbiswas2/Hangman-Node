@@ -26,7 +26,9 @@
 var inquirer = require('inquirer');
 var word = require('./word.js');
 var answerSpaces = [];
-var letters;
+//var letters;
+var guesses = 10;
+//var blankWord = "";
 //console.log(word)
 // function for creating spaces, then run game
 function calculateSpaces() {
@@ -38,18 +40,31 @@ function calculateSpaces() {
 			answerSpaces[i] = "_";
 		}
 		console.log(answerSpaces);
-		letters = blankWord.length;
+		var letters = blankWord.length;
+		console.log(letters);
 	// then run function for user guesses
-	playGame();
-};
+	//playGame();
+//};
 
-function playGame(answers) {
+//function playGame(answers) {
 	inquirer.prompt({
 		name: 'guess',
+		type: 'input',
 		message: 'Guess Letter'
 	}).then(function (answers){
-		console.log(answers);
+		var userGuess = answers.guess;
+		console.log(userGuess);
+		for (var j = 0; j < blankWord.length; j++) {
+			if (userGuess === blankWord[j]) {
+				answerSpaces[j] = userGuess;
+				letters--; //used to calculate if user will lose
+			} else {
+				guesses--;
+			}
+		}
+		console.log(answerSpaces);
 	});
+	
 };
 
 // take user guesses, compare against word, keeps track of guesses, when done reset
@@ -58,6 +73,6 @@ function playGame(answers) {
 
 calculateSpaces();
 
-
+// inquirer prompt would you like to play?
 
 
