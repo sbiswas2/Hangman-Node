@@ -65,9 +65,9 @@ function playGame(answers) {
 			}
 		}
 		console.log(answerSpaces);
+		checker();
 	});
 	// then run function to check again guesses
-	checker();
 };
 
 // take user guesses, compare against word, keeps track of guesses, when done reset
@@ -79,7 +79,7 @@ function checker() {
 		console.log("You Lose!");
 		newGame();
 	} else {
-		
+		playGame();
 	}
 };
 // reset function for variables, then run spaces() again which then leads to game and so on
